@@ -32,17 +32,17 @@ class Manager extends Employee {
     this.managedEmployees.push({ id, firstName, lastName, taxId, salary })
   }
 
-  removeManagedEmployee(employee) {
-    for (employee of managedEmployees) idx = ((managedEmployees.indexOf(employee)))
-    this.managedEmployees.slice(employee[idx], 1)
+  removeManagedEmployee(id, firstName, lastName, taxId, salary) {
+    this.managedEmployees.splice(this.managedEmployees.indexOf({ id, firstName, lastName, taxId, salary }))
   }
 }
 
-const atAndT = new Manager()
-const atAndT2 = new Manager()
 
-atAndT2.addManagedEmployee(2, 'chris', 'het', 0123, 5000)
-atAndT.addManagedEmployee(2, 'chris', 'het', 0123, 5000)
-atAndT.addManagedEmployee(45, 'Kirk', 'mcs', 536235, 37613)
-console.log("atnt", atAndT.managedEmployees);
-console.log("atnt2", atAndT2.managedEmployees);
+
+const employeeList = new Manager()
+
+employeeList.addManagedEmployee(2, 'chris', 'het', 0123, 5000)
+employeeList.addManagedEmployee(45, 'Kirk', 'mcs', 536235, 37613)
+employeeList.addManagedEmployee(33, 'Izk', 'reduce', 47348, 4948)
+// employeeList.removeManagedEmployee(33, 'Izk', 'reduce', 47348, 4948)
+console.log(employeeList.managedEmployees);
